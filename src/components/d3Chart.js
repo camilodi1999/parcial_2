@@ -59,9 +59,7 @@ function D3Chart(prop) {
       .style("stroke", "#ffffff")
       .style("stroke-width", 0)
       .on("mouseover", function (d) {
-        console.log(d);
         let selected = d.srcElement.__data__.data;
-        console.log(selected);
         div.transition().duration(50).style("opacity", "1");
         div
           .html(
@@ -74,6 +72,9 @@ function D3Chart(prop) {
           .style("position", "fixed")
           .style("left", d.clientX + 10 + "px")
           .style("top", d.clientY + "px");
+      })
+      .on("mouseout", function (d) {
+        div.transition().duration("50").style("opacity", 0);
       });
 
     // Append text labels

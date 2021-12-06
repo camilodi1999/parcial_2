@@ -98,6 +98,24 @@ function SpacesList() {
           </div>
           {colRoom !== "" ? <Devices devices={devices} /> : null}
         </div>
+        {rooms.length > 0 ? (
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col">
+                <h1>
+                  <FormattedMessage id="Stats" />
+                </h1>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col">
+                <p>
+                  <FormattedMessage id="Power usage" />
+                </p>
+              </div>
+            </div>
+          </div>
+        ) : null}
         <div className="row">
           <div className="col">
             <D3Chart rooms={rooms} />
