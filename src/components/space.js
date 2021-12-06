@@ -1,12 +1,10 @@
-import { useEffect, useState } from "react";
 import "../App.css";
 
 function Space(props) {
   const space = props.space;
-  console.log(space);
   const image = "./assets/" + space.type + ".png";
   return (
-    <div className="card">
+    <div className="card" onClick={() => props.onClick(space)}>
       <div style={{ padding: "1rem" }}>
         <img
           src={image}
